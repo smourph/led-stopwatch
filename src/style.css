@@ -1,0 +1,167 @@
+/* Root variables for easy tuning */
+:root {
+  --led-width: 7.5em;
+  --led-height: 15em;
+  --led-gap: 1.2em;
+  --dot-size: 1.2em;
+  --small-scale: 0.40;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  background: #f7f7fa;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#stopwatch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#stopwatch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 2em;
+  margin-bottom: 3em;
+}
+
+.btn {
+  padding: 1rem 3rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: 0.75em;
+  font-size: 3.5rem;
+  font-weight: bold;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+}
+
+.reset-btn {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.reset-btn:hover, .reset-btn:focus {
+  text-decoration: none;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.led-digit {
+  position: relative;
+  width: var(--led-width);
+  height: var(--led-height);
+  display: inline-block;
+  margin: 0 var(--led-gap);
+}
+
+.led-digit--small {
+  width: calc(var(--led-width) * var(--small-scale));
+  height: calc(var(--led-height) * var(--small-scale));
+  margin: 0 calc(var(--led-gap) * var(--small-scale));
+}
+
+.led-digit--bottom {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 0.2em;
+}
+
+.segment {
+  position: absolute;
+  background: transparent;
+  border-radius: 0.7em;
+  transition: background 0.2s;
+}
+
+.segment.vertical {
+  width: 14%;
+  height: 42%;
+}
+
+.segment.horizontal {
+  width: 76%;
+  height: 7%;
+  left: 12%;
+}
+
+.segment.top {
+  top: 0;
+}
+
+.segment.bottom {
+  bottom: 0;
+}
+
+.segment.middle {
+  top: 46.5%;
+}
+
+.segment.top-right, .segment.bottom-right {
+  right: 0;
+}
+
+.segment.bottom-left, .segment.top-left {
+  left: 0;
+}
+
+.segment.top-right, .segment.top-left {
+  top: 6%;
+}
+
+.segment.bottom-right, .segment.bottom-left {
+  bottom: 6%;
+}
+
+.segment.on {
+  background: #111217;
+  box-shadow: 0 0 16px rgba(17, 18, 23, 0.6);
+}
+
+.led-colon, .led-dot {
+  width: 2.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.led-colon div, .led-dot {
+  width: calc(var(--dot-size));
+  height: calc(var(--dot-size));
+  border-radius: 50%;
+  background: #111217;
+  box-shadow: 0 0 16px rgba(17, 18, 23, 0.6);
+}
+
+.led-colon div {
+  margin: 0.5em 0;
+}
+
+.led-dot {
+  margin-top: 2.5em;
+}
+
+.led-dot--small {
+  width: calc(var(--dot-size) * 0.666);
+  height: calc(var(--dot-size) * 0.666);
+}
+
+.led-dot--bottom {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: 0.2em;
+}

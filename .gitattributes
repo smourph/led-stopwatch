@@ -1,0 +1,15 @@
+# Text files
+*.ts text
+*.tsx text
+*.js text
+*.css text
+*.html text
+*.json text
+*.md text
+
+# Force LF line endings on all text files
+* text=auto eol=lf
+
+# Ignore node_modules and dist in archives
+node_modules/ export-ignore
+dist/ export-ignore
